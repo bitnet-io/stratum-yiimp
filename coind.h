@@ -26,7 +26,7 @@ public:
 
 //	bool closing;
 
-	int mine_port;
+	int dedicatedport;
 
 	char name[1024];
 	char symbol[256];

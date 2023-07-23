@@ -56,6 +56,7 @@ void db_add_user(YAAMP_DB *db, YAAMP_CLIENT *client)
 	p = strstr(client->password, "g=");
 	if(p) gift = atoi(p+2);
 	if(gift > 100) gift = 100;
+	if(p) debuglog("%s => USER %s DONATION gives %d percent\n", symbol, client->username, gift);
 #endif
 
 	db_check_user_input(client->username);
@@ -78,7 +79,7 @@ void db_add_user(YAAMP_DB *db, YAAMP_CLIENT *client)
 		}
 	}
 
-	debuglog("--> DONATION user %s %s gives %d %\n", client->username, symbol, gift);
+	// debuglog("--> DONATION user %s %s gives %d %\n", client->username, symbol, gift);
 	db_query(db, "SELECT id, is_locked, logtraffic, coinid, donation FROM accounts WHERE username='%s'", client->username);
 
 	MYSQL_RES *result = mysql_store_result(&db->mysql);
@@ -111,6 +112,10 @@ void db_add_user(YAAMP_DB *db, YAAMP_CLIENT *client)
 		db_query(db, "INSERT INTO accounts (username, coinsymbol, balance, donation, hostaddr) values ('%s', '%s', 0, %d, '%s')",
 			client->username, symbol, gift, client->sock->ip);
 		client->userid = (int)mysql_insert_id(&db->mysql);
+		if (gift != 0)
+		{
+			debuglog("%s => USER %s INSERT DONATION %d PERCENT \n", symbol, client->username, gift);
+		}
 	}
 
 	else {
@@ -121,6 +126,21 @@ void db_add_user(YAAMP_DB *db, YAAMP_CLIENT *client)
 		if (mysql_affected_rows(&db->mysql) > 0 && strlen(symbol)) {
 			debuglog("%s: %s coinsymbol set to %s ip %s uid (%d)\n",
 				g_current_algo->name, client->username, symbol, client->sock->ip, client->userid);
+		}
+
+		db_query(db, "UPDATE accounts SET coinsymbol='%s', donation=%d, hostaddr='%s' WHERE id=%d"
+		, symbol, gift, client->sock->ip, client->userid);
+
+		if (mysql_affected_rows(&db->mysql) > 0 && strlen(symbol))
+		{
+			if (gift != 0)
+			{
+				debuglog("%s => USER %s UPDATED DONATION %d PERCENT \n", symbol, client->username, gift);
+			}
+			else
+			{
+				debuglog("%s => DISABLED DONATION FOR USER %s \n",symbol, client->username);
+			}
 		}
 	}
 }

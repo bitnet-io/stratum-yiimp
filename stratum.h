@@ -56,6 +56,8 @@ typedef void (*YAAMP_HASH_FUNCTION)(const char *, char *, uint32_t);
 #define YAAMP_HASHLEN_STR		65
 #define YAAMP_HASHLEN_BIN		32
 
+#define ALLOW_CUSTOM_DONATIONS	true
+
 extern CommonList g_list_coind;
 extern CommonList g_list_client;
 extern CommonList g_list_job;

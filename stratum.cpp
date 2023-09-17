@@ -193,6 +193,7 @@ YAAMP_ALGO g_algos[] =
 	{"sha3d", sha3d_hash, 1, 0, sha3d_hash_hex},
 	{"sha512256d", sha512_256_double_hash, 1, 0, 0},
 	{"sib", sib_hash, 1, 0, 0},
+	{"skydoge", skydoge_hash, 1, 0, 0}, /* Skydoge */
 	{"skein", skein_hash, 1, 0, 0},
 	{"skein2", skein2_hash, 1, 0, 0},
 	{"skunk", skunk_hash, 1, 0, 0},
@@ -234,12 +235,12 @@ YAAMP_ALGO g_algos[] =
 	{"yespowerLITB", yespowerLITB_hash, 0x10000, 0, 0 }, //LightBit[LITB]
 	{"yespowerLTNCG", yespowerLTNCG_hash, 0x10000, 0, 0 }, //LightningCash Gold[LTNCG]
 	{"yespowerR16", yespowerR16_hash, 0x10000, 0, 0 },
-	{"yespowerRES", yespowerRES_hash, 0x10000, 0, 0 }, //Resistanse[RES] 
-	{"yespowerSUGAR", yespowerSUGAR_hash, 0x10000, 0, 0 }, //Sugarchain[SUGAR] 
-	{"yespowerTIDE", yespowerTIDE_hash, 0x10000, 0, 0 }, //Tidecoin[TDC] 
-	{"yespowerURX", yespowerURX_hash, 0x10000, 0, 0 }, //UraniumX[URX] 
-	{"yespowerMGPC", yespowerMGPC_hash, 0x10000, 0, 0 }, //Magpiecoin[MGPC] 
-	{"yespowerARWN", yespowerARWN_hash, 0x10000, 0, 0 }, //Arowanacoin[ARWN] 
+	{"yespowerRES", yespowerRES_hash, 0x10000, 0, 0 }, //Resistanse[RES]
+	{"yespowerSUGAR", yespowerSUGAR_hash, 0x10000, 0, 0 }, //Sugarchain[SUGAR]
+	{"yespowerTIDE", yespowerTIDE_hash, 0x10000, 0, 0 }, //Tidecoin[TDC]
+	{"yespowerURX", yespowerURX_hash, 0x10000, 0, 0 }, //UraniumX[URX]
+	{"yespowerMGPC", yespowerMGPC_hash, 0x10000, 0, 0 }, //Magpiecoin[MGPC]
+	{"yespowerARWN", yespowerARWN_hash, 0x10000, 0, 0 }, //Arowanacoin[ARWN]
 	{"whirlcoin", whirlpool_hash, 1, 0, sha256_hash_hex }, /* old sha merkleroot */
 	{"whirlpool", whirlpool_hash, 1, 0 }, /* sha256d merkleroot */
 	{"whirlpoolx", whirlpoolx_hash, 1, 0, 0},
@@ -449,16 +450,16 @@ void *monitor_thread(void *p)
 			exit(1);
 		}
 
-		if(g_max_shares && g_shares_counter) 
+		if(g_max_shares && g_shares_counter)
 		{
 
-			if((g_shares_counter - g_shares_log) > 10000) 
+			if((g_shares_counter - g_shares_log) > 10000)
 			{
 				stratumlogdate("%s %luK shares...\n", g_stratum_algo, (g_shares_counter/1000u));
 				g_shares_log = g_shares_counter;
 			}
 
-			if(g_shares_counter > g_max_shares) 
+			if(g_shares_counter > g_max_shares)
 			{
 				g_exiting = true;
 				stratumlogdate("%s need a restart (%lu shares), exiting...\n", g_stratum_algo, (unsigned long) g_max_shares);

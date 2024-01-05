@@ -30,3 +30,14 @@
 20:59:30: Warning: unable to decode BITN tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g script pubkey
 20:59:30: BITN tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g extracted script pubkey is 51929fd9f8e1ac30a96f453b4f3809a97d
 20:59:30: ERROR getaccountaddress Bitnet
+21:13:39: 2024-01-05 starting stratum for aurum on .bnomp.io:6233
+21:13:39: Bitnet wallet tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g is not mine.
+21:13:39: Warning: unable to decode BITN tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g script pubkey
+21:13:39: BITN tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g extracted script pubkey is 51929fd9f8e1ac30a96f453b4f3809a97d
+21:13:39: ERROR getaccountaddress Bitnet
+21:15:25: 2024-01-05 starting stratum for aurum on .bnomp.io:6233
+21:15:25: ERROR getaccountaddress Bitnet
+21:17:07: 2024-01-05 starting stratum for aurum on .bnomp.io:6233
+21:17:07: Bitnet wallet is using getaddressinfo.
+21:17:07: Warning: unable to decode BITN tb1q8fsylmfvsus3kngpnz2e4phda02yv0ff5xfhz6 script pubkey
+21:17:07: BITN tb1q8fsylmfvsus3kngpnz2e4phda02yv0ff5xfhz6 extracted script pubkey is 604fed2c87211b4d0198959a86edebd446

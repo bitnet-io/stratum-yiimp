@@ -1,6 +1,0 @@
-21:17:07: 2024-01-05 starting stratum for aurum on .bnomp.io:6233
-21:17:07: connecting to coind BITN
-21:17:07: Bitnet wallet is using getaddressinfo.
-21:17:07: Warning: unable to decode BITN tb1q8fsylmfvsus3kngpnz2e4phda02yv0ff5xfhz6 script pubkey
-21:17:07: BITN tb1q8fsylmfvsus3kngpnz2e4phda02yv0ff5xfhz6 extracted script pubkey is 604fed2c87211b4d0198959a86edebd446
-21:17:07: >>>>>>>>>>>>>>>>>>>> using wallet tb1q8fsylmfvsus3kngpnz2e4phda02yv0ff5xfhz6 

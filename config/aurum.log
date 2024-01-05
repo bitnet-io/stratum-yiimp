@@ -1,6 +1,0 @@
-20:59:30: 2024-01-05 starting stratum for aurum on .bnomp.io:6233
-20:59:30: connecting to coind BITN
-20:59:30: Bitnet wallet tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g is not mine.
-20:59:30: Warning: unable to decode BITN tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g script pubkey
-20:59:30: BITN tb1q9ege987elrs6cv9fdaznknecpx5h64aamdyj8g extracted script pubkey is 51929fd9f8e1ac30a96f453b4f3809a97d
-20:59:30: ERROR getaccountaddress Bitnet

@@ -1,0 +1,7 @@
+20:43:30: 2024-01-05 starting stratum for aurum on .bnomp.io:6233
+20:43:30: connecting to coind BITN
+20:43:30: Bitnet wallet tb1qvg6my6jplr8nqhkhp8rfluw82wah72znqk2pjf is not mine.
+20:43:30: Warning: unable to decode BITN tb1qvg6my6jplr8nqhkhp8rfluw82wah72znqk2pjf script pubkey
+20:43:30: BITN tb1qvg6my6jplr8nqhkhp8rfluw82wah72znqk2pjf extracted script pubkey is 35b26a41f8cf305ed709c69ff1c753bb7f
+20:43:30: ERROR: rpc_do_call: 127.0.0.1:18332 404
+20:43:30: ERROR getaccountaddress Bitnet
